@@ -3,6 +3,9 @@ const hbs = require('hbs');
 const fs = require('fs');
 
 
+
+const port = process.env.PORT || 2000;
+
 var app = express();
 // Set the templating engine handlebar
 app.set('view engine', 'hbs');
@@ -75,6 +78,11 @@ app.get('/bad', (request, response) => {
     })
 })
 
-app.listen(2000, () => {
-    console.log('Server is up on port 2000');
+// app.listen(2000, () => {
+//     console.log('Server is up on port 2000');
+// });
+
+// Change the host to what Heroku provides
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`);
 });
