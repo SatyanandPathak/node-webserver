@@ -78,6 +78,13 @@ app.get('/bad', (request, response) => {
     })
 })
 
+app.get('/projects', (request, response) => {
+    response.render('projects.hbs', {
+        header:'About Page',
+        title: 'Projects'
+    });
+});
+
 // app.listen(2000, () => {
 //     console.log('Server is up on port 2000');
 // });
